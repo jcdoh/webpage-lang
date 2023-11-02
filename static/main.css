@@ -1,0 +1,204 @@
+.navbar{
+    background-color: whitesmoke;
+    display: block;
+}
+.nav{
+    display: inline;
+}
+.navbar-brand{
+    padding-left: 10%;
+}
+.navbar-custom .navbar-brand{
+    font-size: 25px;
+    font-weight: bold;
+    color: #289944;
+    font-family: Avenir;
+}
+.nav-item{
+    padding: 0px 20px;
+}
+.form-custom{
+    position: absolute;
+    right: 15%;
+    top: 15%;
+}
+.form-custom input,
+.form-custom button{
+    font-family: Avenir;
+}
+#euro_flag{
+    height: 35px;
+    padding-right: 10px;
+}
+.icon{
+    height: 16px;
+    margin-left: 8px;
+}
+#add_button{
+    margin-left: 30px;
+}
+#welcome_map{
+    position: center;
+    width: 95%;
+    padding: 30px 0px;
+}
+.normal_text{
+    font-family: Avenir;
+    color: dimgrey;
+    font-size: 30px;
+}
+.text_title{
+    font-family: Avenir;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #289944;
+    font-size: 30px;
+    padding: 0px 8px;
+    border-radius: 5px;
+}
+.side_text{
+    font-family: Avenir;
+    color: whitesmoke;
+    background-color: #525252;
+    font-weight: bold;
+    padding: 0px 8px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+#top_three, #bottom_three{
+    padding-top: 8px;
+}
+.side_column{
+    margin-top: 12px;
+}
+.explore_text{
+    font-size: 25px;
+    font-weight: bold;
+    color: #289944;
+    font-family: Avenir;
+}
+.body_text{
+    padding-top: 25px;
+    font-family: Avenir;
+    font-size: 16px;
+}
+.welcome{
+    padding: 30px 0px;
+}
+.list_one{
+    font-family: Avenir;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.list_two{
+    color: darkblue;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.list_three{
+    margin-left: 15px;
+    font-size: 15px;
+    font-family: Avenir;
+}
+.grey{
+    color: dimgrey;
+}
+.view_title{
+    font-family: Superclarendon;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.view_label{
+    font-family: Avenir;
+    font-size: 17px;
+    padding: 6px 0;
+    color: #525252;
+}
+.view_review{
+    padding: 6px 0;
+    font-family: Avenir;
+    font-size: 18px;
+    color: black;
+}
+.view_note{
+    font-family: Avenir;
+    font-size: 13px;
+    padding: 6px 0;
+    color: #525252;
+}
+.view_difficulty{
+    height: 20px;
+    margin-left: 8px;
+}
+.view_official{
+    font-family: Avenir;
+    font-size: 19px;
+    padding: 30px 0;
+    color: #525252;
+}
+.view_item{
+    color: darkblue;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.left_column{
+    padding-right: 80px;
+}
+.form-group{
+    font-family: Avenir;
+    color: #525252;
+}
+.submit_button{
+    font-family: Avenir;
+}
+.error{
+    color: red;
+    font-size: 14px;
+}
+.success{
+    color: whitesmoke;
+    background-color: #289944;
+    font-family: Avenir;
+    font-size: 20px;
+    padding: 0px 8px;
+    border-radius: 5px;
+}
+.textbox{
+    width: 100%;
+}
+.input_body{
+    padding: 30px 0px;
+}
+.input{
+    margin: 16px 0px;
+}
+.little_gap{
+    margin-bottom: 10px;
+}
+.hr_welcome{
+    background-color: whitesmoke;
+}
+.search_title{
+    font-family: Avenir;
+    font-size: 19px;
+    padding-bottom: 12px;
+    color: #525252;
+}
+.bolded{
+    color: whitesmoke;
+    background-color: #525252;
+    padding: 0 2px;
+}
+.form_not_edited{
+    color: gray;
+    font-family: Avenir;
+    padding-left: 15px;
+    font-size: 17px;
+}
+#edit_form_button{
+    margin-right: 30px;
+}
+.discard_box{
+    float: left;
+    margin: 30px;
+}

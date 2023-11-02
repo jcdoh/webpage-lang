@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'add_edit.js') }}"></script>
+
+<script>
+    let info = {{info|tojson}}
+    let countries = {{countries|tojson}}
+</script>
+
+<div class="container welcome">
+    <div class="input grey" id="successful_entry">
+    </div>
+    <div class="normal_text input">
+        Edit Entry
+    </div>
+    <form>
+        <div class="form-group">
+            <label>Language ID</label>
+            <input type="text" class="form-control" id="ID" value="{{info.id}}" readonly>
+        </div>
+        <div class="form-group">
+            <label>Name of Language</label>
+            <input type="text" class="form-control" id="language" value="{{info.language}}">
+            <span id="language_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="difficulty">Difficulty Level (0-5)</label>
+            <select class="form-control" id="difficulty">
+                {% for i in range(0, 6) %}
+                    {% if i == (info.difficulty)|int %}
+                        <option value="{{info.difficulty}}" selected>{{info.difficulty}}</option>
+                    {% else %}
+                        <option value="{{info.difficulty}}">{{i}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="speakers">Worldwide Speakers (using only digits)</label>
+            <input type="text" class="form-control" id="speakers" value="{{info.speakers}}">
+            <span id="speakers_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="family">Language Family</label>
+            <input type="text" class="form-control" id="family" value="{{info.family}}">
+            <span id="family_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="review">Short Description</label>
+            <textarea class="form-control" id="review" rows="3">{{info.review}}</textarea>
+            <span id="review_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="video">Video URL (please use embed link)</label>
+            <input type="text" class="form-control" id="video" value="{{info.video}}">
+            <span id="video_error" class="error"></span>
+        </div>
+        <div class="form-group countries">
+            <label for="countries">European Countries' Official Language (list separated by commas)</label>
+            <input type="text" class="form-control" id="countries" value="{{countries}}">
+            <span id="countries_error" class="error"></span>
+        </div>
+        <button type="button" id="edit_form_button" class="btn btn-outline-success submit_button">Submit</button>
+        <button type="button" id="discard_form_button" class="btn btn-outline-secondary submit_button">Discard Changes</button>
+    </form>
+</div>
+
+<div id="dialog" class="discard_box" title="Discard changes?">
+  <span>These edits will be permanently discarded. Are you sure you want to continue?</span>
+</div>
+
+{% endblock %}

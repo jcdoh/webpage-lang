@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'add_edit.js') }}"></script>
+
+<script>
+
+</script>
+
+<div class="container welcome">
+    <div class="input grey" id="successful_entry">
+    </div>
+    <div class="normal_text input">
+        Add New Entry
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="language">Name of Language</label>
+            <input type="text" class="form-control" id="language" placeholder="Language">
+            <span id="language_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="difficulty">Difficulty Level (0-5)</label>
+            <select class="form-control" id="difficulty">
+                <option class="grey" value="" selected hidden>-</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <span id="difficulty_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="speakers">Worldwide Speakers (using only digits)</label>
+            <input type="text" class="form-control" id="speakers" placeholder="Speakers">
+            <span id="speakers_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="family">Language Family</label>
+            <input type="text" class="form-control" id="family" placeholder="Language Family">
+            <span id="family_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="review">Short Description</label>
+            <textarea class="form-control" id="review" rows="3" placeholder="Description"></textarea>
+            <span id="review_error" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="video">Video URL (please use embed link)</label>
+            <input type="text" class="form-control" id="video" placeholder="URL">
+            <span id="video_error" class="error"></span>
+        </div>
+        <div class="form-group countries">
+            <label for="countries">European Countries' Official Language (list separated by commas)</label>
+            <input type="text" class="form-control" id="countries" placeholder="Countries">
+            <span id="countries_error" class="error"></span>
+        </div>
+        <button type="button" id="add_form_button" class="btn btn-outline-success submit_button">Submit</button>
+    </form>
+</div>
+{% endblock %}

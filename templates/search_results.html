@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let lang_results = {{lang_results|tojson}}
+    let country_results = {{country_results|tojson}}
+    let fam_results = {{fam_results|tojson}}
+    let search = {{search|tojson}}
+    let empty = {{empty|tojson}}
+</script>
+
+<div class="container welcome">
+    <div class="search_title">
+        {% if empty %}
+            No results found for "{{search}}"
+        {% else %}
+            Showing results for "{{search}}" <br>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <span class="explore_text"> Languages </span>
+            {% if (lang_results|length) == 0 %}
+                <span class="search_title"> - no results </span><br>
+            {% elif lang_results|length == 1 %}
+                <span class="search_title"> - <b>1</b> result </span><br>
+            {% else %}
+                <span class="search_title"> - <b>{{lang_results|length}}</b> results </span>
+            {% endif %}
+            <hr class="hr_welcome">
+            {% if not empty %}
+                {% for i in lang_results %}
+                    <div class="little_gap replace_text">
+                        <a href="/view/{{i.id}}" class="list_two">{{i.language}}</a>
+                        <span class="view_difficulty">: </span>
+                        <span class="view_difficulty replace_language">{{i.language}}</span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <span class="explore_text"> Family </span>
+            {% if fam_results|length == 0 %}
+                <span class="search_title"> - no results </span><br>
+            {% elif fam_results|length == 1 %}
+                <span class="search_title"> - <b>1</b>  result </span><br>
+            {% else %}
+                <span class="search_title"> - <b>{{fam_results|length}}</b> results </span>
+            {% endif %}
+            <hr class="hr_welcome">
+            {% if not empty %}
+                {% for i in fam_results %}
+                    <div class="little_gap">
+                        <a href="/view/{{i.id}}" class="list_two">{{i.language}}</a>
+                        <span class="view_difficulty">: </span>
+                        <span class="view_difficulty replace_family">{{i.family}}</span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <span class="explore_text"> Countries </span>
+            {% if country_results|length == 0 %}
+                <span class="search_title"> - no results </span><br>
+            {% elif country_results|length == 1 %}
+                <span class="search_title"> - <b>1</b>  result </span><br>
+            {% else %}
+                <span class="search_title"> - <b>{{country_results|length}}</b> results </span>
+            {% endif %}
+            <hr class="hr_welcome">
+            <div>
+                {% if not empty %}
+                    {% for key, value in country_results.items() %}
+                        <div class="little_gap">
+                            <a href="/view/{{key}}" class="list_two">{{value[0]}}</a>
+                            <span class="view_difficulty">: </span>
+                            <span class="view_difficulty replace_country">
+                                {% for i in range(value|length) %}
+                                    {% if i > 0 and i == (value|length - 1) %}
+                                        {{value[i]}}
+                                    {% elif i > 0 %}
+                                        {{value[i]}},
+                                    {% endif %}
+                                {% endfor %}
+                            <br></span>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

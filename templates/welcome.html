@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'welcome.js') }}"></script>
+
+<script>
+    let most = {{most|tojson}}
+    let least = {{least|tojson}}
+</script>
+
+<div class="container welcome">
+    <div class="row">
+        <div class="col-md-8">
+            <span class="normal_text">
+                Welcome to
+                <span class="text_title">
+                    Languages of Europe
+                </span>
+            </span><br>
+            <div class="body_text">
+                Are you interested in moving to a new country in Europe? Are you looking to learn a new skill?
+                Would you like to find the perfect language?
+                <br><br>
+                Look no further than here! The languages of Europe are diverse and steeped in history and culture.
+                Sometimes wildly different from English, other times comfortingly familiar, there is something for
+                everyone. Have a look at the map below to discover the simultaneous interconnectivity and variety.
+                <br>
+            </div>
+            <img src="https://viborc.com/wp-content/uploads/2018/02/europe-snow-e1559481934181.png"
+                 alt="Map of Europe showing how each country/language pronounces the word 'snow'" id="welcome_map">
+        </div>
+        <div class="col-md-4 side_column">
+            <span class="explore_text">
+                Explore
+            </span><br>
+            <hr class="hr_welcome">
+            <span class="side_text">
+                Most spoken worldwide:
+            </span>
+            <div id="top_three">
+            </div><br>
+            <span class="side_text">
+                Least spoken worldwide:
+            </span>
+            <div id="bottom_three">
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}">
+</head>
+<body>
+<nav class="navbar navbar-custom">
+    <div class="title">
+        <ul class="nav justify-content-between">
+            <li class="nav-item">
+                <a href="/" class="navbar-brand">
+                    <img src="https://www.mapsnworld.com/europe/europe-flag.jpg" alt="Flag of Europe" id="euro_flag" class="d-inline-block">
+                    Languages of Europe
+                </a>
+            </li>
+        </ul>
+        <div class="form-inline form-custom">
+            <input class="form-control mr-sm-2 textbox" type="text" id="search_text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="search_button">Search</button>
+            <button class="btn btn-outline-secondary my-2 my-sm-0" id="add_button">Add</button>
+        </div>
+    </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

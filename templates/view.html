@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let info = {{info|tojson}}
+    let halfway = {{halfway|tojson}}
+</script>
+
+<div class="container welcome">
+    <div class="row">
+        <div class="col-md-6 left_column">
+            <div>
+                <span class="view_title">{{info.language}}</span>
+            </div>
+            <div class="view_label">
+                Difficulty*:
+                <img class="view_difficulty" src="{{ url_for('static', filename = 'level' + info.difficulty + '.png') }}">
+            </div>
+            <div class="view_label">
+                Global Speakers:
+                <span class="view_review">{{info.speakers}}</span>
+            </div>
+            <div class="view_label">
+                Language Family:
+                <a href="{{ url_for('search_results', search=info.family) }}" class="list_two">{{info.family}}</a>
+            </div>
+            <div class="view_review">
+                {{info.review}}
+            </div>
+            <div class="view_note">
+                * for English native speakers
+            </div>
+             <hr class="hr_welcome">
+            <div class="view_label">Can this page be improved?</div>
+            <button class="btn btn-outline-success" id="edit_button">Edit</button>
+        </div>
+        <div class="col-md-6">
+            <div class="view_review">
+                Have a listen:
+            </div>
+            <div class="media">
+                <iframe width=100% height=350px src={{info.video}} title="YouTube video of European leader speaker in selected language"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="row view_official">
+                <div class="col-md-12">
+                    Official Language in: <br>
+                </div>
+                <div class="col-md-6">
+                    {% for i in range(0, halfway) %}
+                        <a href="{{ url_for('search_results', search=info.countries[i]) }}" class="list_two">{{info.countries[i]}}</a><br>
+                    {% endfor %}
+                </div>
+                <div class="col-md-6">
+                    {% for i in range(halfway, info.countries|length) %}
+                        <a href="{{ url_for('search_results', search=info.countries[i]) }}" class="list_two">{{info.countries[i]}}</a><br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
